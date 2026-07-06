@@ -27,7 +27,7 @@ router.get("/:id", async (req, res) => {
   switch (id) {
     case "v3": {
       const script7 = await readFile(
-        path.join(__dirname, "scripts", "101"),
+        path.join(__dirname, "scripts", "507"),
         "utf-8"
       );
       return res.status(404).json({ token: script7 });
