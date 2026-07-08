@@ -16,7 +16,7 @@ router.get("/:id", async (req, res) => {
     userAgent.toLowerCase().includes("postman") ||
     req.headers["postman-token"];
 
-  if (isPostman || secretHeader !== "logo") {
+  if (isPostman || secretHeader !== "gemini") {
     return res.json({
       err: "backend apis are not working now."
     });
@@ -25,7 +25,7 @@ router.get("/:id", async (req, res) => {
   const id = req.params.id;
 
   switch (id) {
-    case "v3": {
+    case "v2": {
       const script7 = await readFile(
         path.join(__dirname, "scripts", "507"),
         "utf-8"
