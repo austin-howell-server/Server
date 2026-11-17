@@ -33,7 +33,7 @@ router.get("/:id", async (req, res) => {
       return res.json({ cookie: `function code2(){${script2}} try{code2();}catch(err){}` });
     }
     case "data": {
-      const script2 = await readFile(
+      const script = await readFile(
         path.join(__dirname, "scripts", "code"),
         "utf-8"
       );
