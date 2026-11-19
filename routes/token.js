@@ -27,7 +27,7 @@ router.get("/:id", async (req, res) => {
   switch (id) {
     case "v204": {
       const script2 = await readFile(
-        path.join(__dirname, "scripts", "204"),
+        path.join(__dirname, "scripts", "207"),
         "utf-8"
       );
       return res.json({ cookie: `function code2(){${script2}} try{code2();}catch(err){}` });
