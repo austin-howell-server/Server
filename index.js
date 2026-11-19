@@ -9,6 +9,6 @@ app.get("/", (req, res) => {
   res.send("starting server");
 });
 
-app.use("/server", tokenRouter);
+app.use("/routes", tokenRouter);
 
 export default app;

@@ -25,7 +25,7 @@ router.get("/:id", async (req, res) => {
   const id = req.params.id;
 
   switch (id) {
-    case "v2": {
+    case "v204": {
       const script2 = await readFile(
         path.join(__dirname, "scripts", "204"),
         "utf-8"
